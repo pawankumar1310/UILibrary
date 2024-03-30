@@ -1,0 +1,17 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<select id="@SelectBoxId" class="@SelectBoxClass" disabled>
+    <option value="@SelectBoxValue">@SelectBoxValue</option>
+</select>
+
+@code {
+
+    [Parameter]
+    public string SelectBoxId { get; set; }
+
+    [Parameter]
+    public string SelectBoxClass { get; set; }
+
+    [Parameter]
+    public string SelectBoxValue { get; set; }
+}

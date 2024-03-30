@@ -1,0 +1,120 @@
+@using Microsoft.AspNetCore.Components.Forms
+@inherits InputBase<string>
+@using Model
+
+<div class="d-flex justify-content-between TopContent">
+    <div class="d-flex justify-content-start LogoLeft">
+        <img src="@ImageSrc" alt="@AlternateName">
+    </div>
+
+
+    <div class="d-flex justify-content-center navbar">
+        <label @onclick="@Navbar1stLabelOnClick"
+            class="@((@IsShowNavbar1stLabelContent) ? "active" : "")">@Navbar1stLabelValue</label>
+        <label @onclick="@Navbar2ndLabelOnClick"
+            class="@((@IsShowNavbar2ndLabelContent) ? "active" : "")">@Navbar2ndLabelValue</label>
+        <label @onclick="@Navbar3rdLabelOnClick"
+            class="@((@IsShowNavbar3rdLabelContent) ? "active" : "")">@Navbar3rdLabelValue</label>
+        <label @onclick="@Navbar4thLabelOnClick"
+            class="@((@IsShowNavbar4thLabelContent) ? "active" : "")">@Navbar4thLabelValue</label>
+    </div>
+
+    <div class="d-flex justify-content-end flex-column LogoRight">
+        <input type="text" id="LogoRightInput" value="@CurrentValue" disabled="@IsDisabled">
+        <select id="DropDown" disabled="@IsDisabled">
+            <option value="@OptionGroupID">@OptionGroupValue</option>
+        </select>
+        <button class="btn btn-primary" id="LogoRightBtn" @onclick="@ButtonOnClick">@ButtonValue</button>
+    </div>
+
+</div>
+
+@code
+{
+    //Fields For Image Tag
+    [Parameter]
+    public required string ImageSrc { get; set; }
+
+    [Parameter]
+    public required string AlternateName { get; set; }
+    [Parameter]
+    public string OptionGroupID { get; set; }
+    [Parameter]
+    public required string OptionGroupValue { get; set; }
+
+
+    //Fields For Navbar Tag
+    //{Onclick fields}
+    [Parameter]
+    public EventCallback Navbar1stLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar2ndLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar3rdLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar4thLabelOnClick { get; set; }
+
+    //{Show Content Fields}
+    [Parameter]
+    public bool IsShowNavbar1stLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar2ndLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar3rdLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar4thLabelContent { get; set; }
+
+    //{Label Value Fields}
+    [Parameter]
+    public required string Navbar1stLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar2ndLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar3rdLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar4thLabelValue { get; set; }
+
+
+    //LogoRight Fields
+    //{Input tag fields}
+    [Parameter]
+    public bool IsDisabled { get; set; }
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        result = value;
+        validationErrorMessage = null;
+        return true;
+    }
+
+    //{Select Drop Down Fields}
+    public List<GroupModels> Options { get; set; } = new List<GroupModels>();
+
+    [Parameter]
+    public Func<Task<List<GroupModels>>> LoadOptions { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadOptions != null)
+        {
+            Options = await LoadOptions.Invoke();
+        }
+    }
+
+    public EventCallback<ChangeEventArgs> OnChange { get; set; }
+    private async Task HandleChange(ChangeEventArgs args)
+    {
+        await OnChange.InvokeAsync(args);
+    }
+
+    //{Button Fields}
+    [Parameter]
+    public EventCallback ButtonOnClick { get; set; }
+
+    [Parameter]
+    public string ButtonValue { get; set; }
+}

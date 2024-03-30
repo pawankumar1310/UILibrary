@@ -1,0 +1,70 @@
+.BottomContent {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Navigation links */
+.BottomContent label {
+    cursor: pointer;
+    float: left;
+    display: block;
+    color: #b5b5b5;
+    text-align: center;
+    padding: 0 20px 0 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Underline animation */
+.BottomContent label::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #030303;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.BottomContent label:hover::after {
+    width: 100%;
+}
+
+/* Change color on hover */
+.BottomContent label.active {
+    color: rgb(66, 50, 50);
+}
+
+.BottomContent img {
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+#UserName {
+    margin: 0 0.5rem 0 1rem;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    width: 10rem;
+    height: 3rem;
+    align-items: start;
+    overflow: auto;
+}
+
+#UserName label {
+    cursor: pointer;
+    float: left;
+    display: block;
+    color: #b5b5b5;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    text-decoration: none;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

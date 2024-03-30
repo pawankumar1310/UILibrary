@@ -1,0 +1,27 @@
+.selected-value
+{
+    margin-left: 0.5rem
+}
+
+.selected-value label
+{
+    color: aliceblue;
+    font-size: 12px;
+    font-family: autoradiographic;
+    font-weight: bold;
+    word-spacing: 2px;
+}
+
+.selected-value span
+{
+    color: red;
+    font-size: 16px;
+    font-family: autoradiographic;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.selected-value span:hover
+{
+    color: aliceblue;
+}

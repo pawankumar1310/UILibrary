@@ -1,0 +1,80 @@
+@using System.Text.RegularExpressions;
+@using Microsoft.AspNetCore.Components.Forms
+@inherits InputBase<string>
+
+<div style="position: relative;">
+    <input type="@InputTextType" class="@InputTextClass" value="@CurrentValue" @oninput="OnInputValueChanged"
+        placeholder="@InputTextPlaceholder" id="@InputTextId" disabled="@IsDisabled" readonly="@IsReadonly" />
+</div>
+
+@code
+{
+    [Parameter]
+    public string InputTextType { get; set; }
+
+    [Parameter]
+    public string InputReadOnly { get; set; }
+
+    [Parameter]
+    public bool IsReadonly { get; set; } =false;
+
+    
+
+    [Parameter]
+    public string InputTextClass { get; set; }
+    [Parameter]
+    public string InputTextValue { get; set; }
+    [Parameter]
+    public EventCallback<string> InputTextChanged { get; set; }
+
+    [Parameter]
+    public string InputTextPlaceholder { get; set; }
+
+    [Parameter]
+    public string InputTextId { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    private string ErrorMessage { get; set; }
+    private bool ShowErrorMessage { get; set; }
+    private async Task OnInputValueChanged(ChangeEventArgs args)
+    {
+        CurrentValue = args.Value.ToString();
+        await InputTextChanged.InvokeAsync(CurrentValue);
+    }
+    // Implement the missing method
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        result = value;
+        validationErrorMessage = null;
+        return true;
+    }
+
+    private void ValidateInput()
+    {
+        if (string.IsNullOrWhiteSpace(InputTextValue))
+        {
+            ShowErrorMessage = true;
+            ErrorMessage = "Input cannot be empty.";
+        }
+        else
+        {
+            string regexPattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+            ShowErrorMessage = !Regex.IsMatch(InputTextValue, regexPattern);
+
+            if (ShowErrorMessage && char.IsDigit(InputTextValue.FirstOrDefault()))
+            {
+                ErrorMessage = "Invalid email format. Email should not start with a number.";
+            }
+            else
+            {
+                ErrorMessage = null;
+            }
+        }
+    }
+}

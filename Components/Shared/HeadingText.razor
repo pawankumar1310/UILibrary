@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="HeadingTextDiv">
+    <h2>@HeadingValue</h2>
+</div>
+
+@code
+{
+    [Parameter]
+    public required string HeadingValue { get; set; }
+}

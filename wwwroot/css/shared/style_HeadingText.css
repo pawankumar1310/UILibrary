@@ -1,0 +1,47 @@
+@import url('root/style_CommonStyle.css');
+
+.HeadingTextDiv {
+    margin: 0.313rem 0 0.313rem 0;
+    align-items: center;
+    
+}
+
+.HeadingTextDiv h2 {
+    display: block;
+    font-family: autoradiographic;
+    font-size: 24px;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+/* Responsive styling for content */
+@media (max-width: 767px) {
+    .HeadingTextDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .HeadingTextDiv h2 {
+        font-size: 16px;
+    }
+}
+
+/* For screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .HeadingTextDiv {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .HeadingTextDiv h2 {
+        font-size: 20px;
+    }
+}
+
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+    
+    .HeadingTextDiv h2 {
+        font-size: 24px;
+    }
+}

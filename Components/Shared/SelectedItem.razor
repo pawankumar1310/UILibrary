@@ -1,0 +1,23 @@
+@typeparam T
+
+<div class="selected-value">
+    <label>@SelectedValue</label>
+    <span class="cancel-label" @onclick="Remove"><b>X</b></span>
+</div>
+
+@code{
+    [Parameter]
+    public T SelectedModel { get; set; }
+
+    [Parameter]
+    public EventCallback<T> OnRemove { get; set; }
+
+    [Parameter]
+    public string SelectedValue { get; set; }
+
+    private async Task Remove()
+    {
+        await OnRemove.InvokeAsync(SelectedModel);
+    }
+
+}

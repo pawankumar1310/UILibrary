@@ -1,0 +1,8 @@
+
+.borderComboBox {
+    border: 2px solid #3399ff;
+}
+.borderComboBox:focus {
+    border: 2px solid white;
+    /* padding-left: 40px; */
+}

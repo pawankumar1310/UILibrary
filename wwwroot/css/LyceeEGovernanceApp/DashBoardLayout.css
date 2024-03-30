@@ -1,0 +1,244 @@
+.menu__item__name {
+    display: block;
+    margin: 1rem 0;
+    border: none !important;
+}
+
+.menu__link__name {
+    font-size: 1.06em;
+    font-weight: bold;
+    display: block;
+    padding: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #b5b5b5;
+    border: none !important;
+}
+
+#FirstNavBar {
+    width: auto;
+    margin-right: 0;
+}
+
+#FirstNavBar img {
+    height: 7.5rem;
+    width: 7.5rem;
+}
+
+#SecondNavBar {
+    width: auto;
+    margin-left: 9.375rem;
+}
+
+.menu__item a {
+    font-size: 23px;
+}
+
+.menu__item #listAchievements,
+#listRecognitions {
+    font-size: 23px;
+    padding-left: 0;
+    padding-top: 1rem;
+}
+
+.menu__item button {
+    display: none;
+}
+
+.menu__item__name img {
+    height: 3rem;
+    width: 3.125em;
+    border-radius: 0.625em;
+}
+
+.menu__item__name label {
+    cursor: default;
+}
+
+#EditProfile {
+    border: none !important;
+    margin-right: -4.375rem;
+    font-size: 23px;
+    padding-left: 3.75rem;
+    padding-right: 1.25em;
+    margin-left: 8.125em;
+    margin-top: -1.25em;
+    padding-top: 2.5rem;
+    padding-bottom: 1.25em;
+}
+
+#SchoolInfo {
+    border: none !important;
+    margin-right: -1.25em;
+    font-size: 23px;
+    padding-left: 3.125em;
+    padding-right: 1.25em;
+    margin-left: 1.875rem;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+}
+
+@media (max-width: 767px) {
+    #TopContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LogoLeft img {
+        height: 4rem;
+        width: 4rem;
+        margin-bottom: 0.625em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        float: none;
+        display: inline-block;
+    }
+
+    #LogoRightInput,
+    #DropDown,
+    #LogoRightBtn {
+        width: 16rem;
+        height: 2.2rem;
+    }
+}
+
+/* For screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    #TopContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LogoLeft img {
+        height: 5.5rem;
+        width: 5.5rem;
+        margin-bottom: 0.625em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        float: none;
+        display: inline-block;
+    }
+
+    #LogoRightInput,
+    #DropDown,
+    #LogoRightBtn {
+        width: 21rem;
+        height: 2.2rem;
+    }
+}
+
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+    .menu__item__name {
+        display: block;
+        margin: 0.833vw 0;
+        border: none !important;
+    }
+
+    .menu__link__name {
+        font-size: 0.883vw;
+        font-weight: bold;
+        display: block;
+        padding: 0.833vw;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        color: #b5b5b5;
+        border: none !important;
+    }
+
+    #FirstNavBar {
+        width: auto;
+        margin-right: 0;
+    }
+
+    #FirstNavBar img {
+        height: 6.25vw;
+        width: 6.25vw;
+    }
+
+    #SecondNavBar {
+        width: auto;
+        margin-left: 7.813vw;
+    }
+
+    .menu__item a {
+        font-size: 23px;
+    }
+
+    .menu__item #listAchievements,
+    #listRecognitions {
+        font-size: 1.198vw;
+        padding-left: 0;
+        padding-top: 0.833vw;
+    }
+
+    .menu__item button {
+        display: none;
+    }
+
+    .menu__item__name img {
+        height: 2.5vw;
+        width: 2.604vw;
+        border-radius: 0.521vw;
+    }
+
+    .menu__item__name label {
+        cursor: default;
+    }
+
+    #EditProfile {
+        border: none !important;
+        margin-right: -3.646vw;
+        /* Convert -3.646rem to vw */
+        font-size: 1.198vw;
+        /* Convert 1.198rem to vw */
+        padding-left: calc(3.75em * 0.625)vw;
+        /* Convert 3.75em to vw */
+        padding-right: calc(1.25em * 0.625)vw;
+        /* Convert 1.25em to vw */
+        margin-left: calc(8.125em * 0.625)vw;
+        /* Convert 8.125em to vw */
+        margin-top: -1.25vw;
+        /* Convert -1.25rem to vw */
+        padding-top: 2.5vw;
+        /* Convert 2.5rem to vw */
+        padding-bottom: 1.25vw;
+        /* Convert 1.25rem to vw */
+
+    }
+
+    #SchoolInfo {
+        border: none !important;
+        margin-right: calc(-1.25em * 0.625)vw;
+        font-size: 23px;
+        padding-left: calc(3.125em * 0.625)vw;
+        padding-right: calc(1.25em * 0.625)vw;
+        margin-left: calc(1.875em * 0.625)vw;
+        padding-top: calc(1.25em * 0.625)vw;
+        padding-bottom: calc(1.25em * 0.625)vw;
+    }
+}

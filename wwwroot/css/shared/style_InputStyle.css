@@ -1,0 +1,190 @@
+@import url('root/style_CommonStyle.css');
+
+.NameInputComp {
+    margin-top: 0.313rem;
+    margin-bottom: 0.313rem;
+    padding: 0.313rem 0.313rem 0.313rem 0.313rem;
+    align-items: center;
+    width: 100%;
+}
+
+.labelDiv {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.labelDiv label {
+    display: block;
+    font-family: autoradiographic;
+    font-size: 1.1em;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.inputDiv .form-input {
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+}
+
+.inputDiv .form-input::placeholder {
+    color: var(--white-color);
+}
+
+.inputDiv .form-input:focus {
+    outline: none;
+    border: 2px solid var(--white-color);
+}
+
+.errorMessage {
+    height: 1rem;
+    padding-bottom: 0.313rem;
+}
+
+.errorMessage label {
+    color: var(--red-color);
+    font-family: Google Sans, Noto Sans Myanmar UI, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 0.625;
+    word-break: break-word;
+}
+
+/*----------------------------------------------------*/
+/* Extra Small Devices (xs) */
+@media (max-width: 575.98px) {
+    .NameInputComp {
+        margin-top: 0.156rem;
+        margin-bottom: 0.156rem;
+        padding: 0.156rem 0.156rem 0.156rem 0.156rem;
+    }
+
+    .labelDiv label {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
+    .inputDiv input {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .errorMessage {
+        height: 0.7rem;
+        padding-bottom: 0.156rem;
+    }
+
+    .errorMessage label {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 0.156;
+    }
+}
+
+/* Small Devices (sm) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .NameInputComp {
+        margin-top: 0.156rem;
+        margin-bottom: 0.156rem;
+        padding: 0.156rem 0.156rem 0.156rem 0.156rem;
+    }
+
+    .labelDiv label {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
+    .inputDiv input {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .errorMessage {
+        height: 0.7rem;
+        padding-bottom: 0.156rem;
+    }
+
+    .errorMessage label {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 0.156;
+    }
+}
+
+/* Medium Devices (md) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .NameInputComp {
+        margin-top: 0.313rem;
+        margin-bottom: 0.313rem;
+        padding: 0.313rem 0.313rem 0.313rem 0.313rem;
+    }
+
+    .labelDiv label {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .inputDiv input {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .errorMessage {
+        height: 0.9rem;
+        padding-bottom: 0.234rem;
+    }
+
+    .errorMessage label {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 0.234;
+    }
+}
+
+/* Large Devices (lg) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .NameInputComp {
+        margin-top: 0.313rem;
+        margin-bottom: 0.313rem;
+        padding: 0.313rem 0.313rem 0.313rem 0.313rem;
+    }
+}
+
+
+/* Responsive styling for content */
+@media (max-width: 767px) {
+    #Submit {
+        width: 100%;
+        height: 2rem;
+        font-size: 14px;
+        padding: 0.5rem 2rem 1rem 2rem;
+    }
+}
+
+/* For screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    #Submit {
+        width: 100%;
+        height: 2rem;
+        font-size: 16px;
+        padding: 0.5rem 3rem 1rem 3rem;
+    }
+}

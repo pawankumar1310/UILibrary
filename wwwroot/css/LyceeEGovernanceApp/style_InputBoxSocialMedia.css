@@ -1,0 +1,179 @@
+@import url('root/style_CommonStyle.css');
+
+.labelDiv label {
+    display: block;
+    font-family: autoradiographic;
+    padding: 1.125rem 0.313rem 0.313rem 0.125rem;
+    font-size: 1.1em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.social_input_container {
+    width: 100%;
+    margin-bottom: 0.938rem;
+    position: relative;
+    height: 1.938rem;
+}
+
+.social_input_container img {
+    position: absolute;
+    top: 0.125rem;
+    left: 0.625rem;
+    width: 1.875rem;
+    height: 1.938rem;
+}
+.social_input_container img {
+    position: absolute;
+    top: 0.125rem;
+    left: 0.625rem;
+    width: 1.875rem;
+    height: 1.938rem;
+}
+
+.social_input_container .fields {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1em;
+    padding: 5px 10px;
+    font-style: italic;
+    margin: 8px;
+    color: white;
+    display: block;
+    width: 100%;
+    background: #000;
+    border: 2px solid #3399ff;
+    padding-left: 40px;
+    border-radius: 0.313rem;
+}
+
+.social_input_container.fields:focus {
+    border: 2px solid white;
+    padding-left: 40px;
+}
+
+.social_media_icon {
+    background: #46619C;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.errorMessage {
+    height: 1rem;
+    padding-bottom: 0.313rem;
+}
+
+.errorMessage label {
+    color: var(--red-color);
+    font-family: Google Sans, Noto Sans Myanmar UI, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 0.625;
+    word-break: break-word;
+}
+
+/* Small Devices (sm) */
+@media (min-width: 768px) {
+    .labelDiv label {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
+    .social_input_container{
+        width: 100%;
+    }
+
+    .social_input_container img {
+        width: 0.938rem;
+        height: 1rem;
+    }
+
+    .social_input_container .fields {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .errorMessage {
+        height: 0.8rem;
+        padding-bottom: 0.156rem;
+    }
+
+    .errorMessage label {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 0.156;
+    }
+}
+
+/* Medium Devices (md) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .labelDiv label {
+        font-size: 16px;
+        font-weight: 200;
+    }
+
+    .social_input_container{
+        width: 100%;
+    }
+
+    .social_input_container img {
+        width: 1.5rem;
+        height: 1.313rem;
+    }
+
+    .social_input_container .fields {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 40%;
+    }
+
+    .errorMessage {
+        height: 0.7rem;
+        padding-bottom: 0.156rem;
+    }
+
+    .errorMessage label {
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 0.156;
+    }
+}
+
+/* Large Devices (lg) */
+@media (min-width: 992px){
+    .labelDiv label {
+        font-size: 1.1rem;
+        font-weight: 200;
+    }
+
+    .social_input_container img {
+        width: 1.875rem;
+        height: 1.938rem;
+    }
+
+    .social_input_container .fields {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .errorMessage {
+        height: 1rem;
+        padding-bottom: 0.313rem;
+    }
+
+    .errorMessage label {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 0.625;
+    }
+}

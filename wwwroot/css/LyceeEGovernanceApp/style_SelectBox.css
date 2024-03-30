@@ -1,0 +1,30 @@
+.participant .login-fields-email {
+    float: right;
+    width: 100%;
+}
+.login-fields-email {
+    /* Size and position */
+    width: 40%;
+    height: 32px;
+    padding: 0 10px;
+    /* Styles */
+    border: 2px solid black; /* Fallback */
+    border-radius: 5px 5px 5px 5px;
+    background: #DDDDDD; /* Fallback */
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+    /* Font styles */
+    font-family: 'Montserrat', sans-serif;
+    text-indent: 10px;
+    color: black;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+    .login-fields-email:hover,
+    .login-fields-email:focus {
+        background: #f7def7; /* Fallback */
+        background: rgba(221,221,221,0.5);
+        outline: none;
+    }
+

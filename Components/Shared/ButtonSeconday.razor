@@ -1,0 +1,22 @@
+
+<button class="btn btn-primary" @onclick="@ButtonOnClick" onmouseover="this.style.backgroundColor='@ButtonOnMouseOver';"
+    onmouseout="this.style.backgroundColor='@ButtonOnMouseOut';" id="@ButtonId">@ButtonValue</button>
+
+@code
+{
+
+    [Parameter]
+    public EventCallback ButtonOnClick { get; set; }
+
+    [Parameter]
+    public string ButtonOnMouseOver { get; set; }
+
+    [Parameter]
+    public string ButtonOnMouseOut { get; set; }
+
+    [Parameter]
+    public string ButtonValue { get; set; }
+
+    [Parameter]
+    public string ButtonId { get; set; }
+}
