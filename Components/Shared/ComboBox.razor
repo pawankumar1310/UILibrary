@@ -1,0 +1,41 @@
+@using Microsoft.AspNetCore.Components.Forms
+@using Model
+
+
+<select id="@Id" class="@CssClass" @onchange="HandleChange">
+    <option value="" disabled selected>@PlaceholderText</option>
+    @foreach (var option in Options)
+    {
+        <option value="@option.groupID">@option.name</option>
+    }
+</select>
+
+
+
+@code 
+{
+    public List<GroupModels> Options { get; set; } = new List<GroupModels>();
+    [Parameter]
+    public Func<Task<List<GroupModels>>> LoadOptions { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadOptions != null)
+        {
+            Options = await LoadOptions.Invoke();
+        }
+    }
+
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+    [Parameter]
+    public EventCallback<ChangeEventArgs> OnChange { get; set; }
+    private async Task HandleChange(ChangeEventArgs args)
+    {
+        await OnChange.InvokeAsync(args);
+    }
+    [Parameter]
+    public string PlaceholderText { get; set; }
+}

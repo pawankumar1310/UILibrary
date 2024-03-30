@@ -1,0 +1,16 @@
+<label id="@LabelId" class="@LabelClass" @onclick="@LabelFunction">@LabelValue</label>
+
+@code
+{
+    [Parameter]
+    public required string LabelId { get; set; }
+
+    [Parameter]
+    public required string LabelClass { get; set; }
+
+    [Parameter]
+    public EventCallback LabelFunction { get; set; }
+
+    [Parameter]
+    public required string LabelValue { get; set; }
+}

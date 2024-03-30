@@ -1,0 +1,207 @@
+@using Microsoft.AspNetCore.Components.Forms
+@inherits InputBase<string>
+
+@* <head>
+    <link rel="stylesheet" href="css/NameInputTextBox.css">
+</head> *@
+
+<style>
+                :root {
+                --black-color: #231F20;
+                --white-color: #ffffff;
+                --blue-color: #3399FF;
+                --red-color: #F70000;
+            }
+
+            .NameInputComp {
+                margin-top: 0.313rem;
+                margin-bottom: 0.313rem;
+                padding: 0.313rem 0.313rem 0.313rem 0.313rem;
+                align-items: center;
+            }
+
+            .labelDiv label {
+                display: block;
+                font-family: autoradiographic;
+                font-size: 1.1em;
+                color: var(--white-color);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+            }
+
+            .form-input {
+                outline: none;
+                border-color: 2px solid var(--blue-color);
+                border-radius: 5px;
+                height: 2.5rem;
+                width: 150%;
+                font-size: 1rem;
+                font-family: autoradiographic;
+            }
+
+
+            .form-input {
+                
+                font-family: 'Lato', Calibri, Arial, sans-serif;
+                line-height: 1.5;
+                font-size: 1em;
+                font-style: italic;
+                color: white;
+                display: block;
+                width: 100%;
+                background: #000;
+                border: 2px solid #3399ff;
+                
+            }
+
+            .form-input:focus {
+                border: 1px solid var(--white-color);
+            }
+
+            .errorMessage {
+                height: 1rem;
+                padding-bottom: 0.313rem;
+            }
+
+            .errorMessage label {
+                color: var(--red-color);
+                font-family: Google Sans, Noto Sans Myanmar UI, arial, sans-serif;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 0.313;
+                word-break: break-word;
+            }
+
+            #Submit {
+                cursor: pointer;
+                text-transform: uppercase;
+                background-color: var(--black-color);
+                color: var(--blue-color);
+                border-radius: 3px;
+                border: 1px solid var(--blue-color);
+                width: 30%;
+                height: 40px;
+                font-size: 20px;
+
+            }
+
+            .row {
+                align-items: center;
+                height: 10rem;
+                
+            }
+
+            .col-md-5{
+                /* background-color: black; */
+                color:white;
+            }
+            .Illustrator {
+                width: 31.25rem;
+                height: 31.25rem;
+            }
+
+            .RightColumnBody {
+                /* border: 0.5px solid #bdbdbd; */
+                border-radius: 8px;
+                height: 100%;
+                margin: 1.25rem;
+                width: 26.25rem;
+            }
+
+            .Lycee_logo {
+                width: 5rem;
+                height: 3.75rem;
+                margin-top: 1.875rem;
+            }
+
+            #headingText {
+                color:white;
+                /* padding-bottom: 1.875rem; */
+                margin-top: 1.25rem;
+            }
+
+            h1 {
+                color: white;
+                padding-bottom: 0;
+                padding-top: 0;
+                font-family: Google Sans, Noto Sans Myanmar UI, arial, sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.3333;
+                margin-bottom: 0.625rem;
+                margin-top: 0;
+                word-break: break-word;
+            }
+
+            #RightColumnBodySpan {
+                color: #202124;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                line-height: 1.5;
+                margin-top: 1.25rem;
+
+            }
+
+           
+</style>
+
+<div class="NameInputComp">
+    <div class="labelDiv">
+        <label>@LabelValue</label>
+    </div>
+
+    <div class="inputDiv">
+        <input type="text" class="form-input" @bind="@InputTextValue" @oninput="OnInputValueChanged"
+            placeholder="@InputTextPlaceholder" id="inputTextId" disabled="@IsDisabled" />
+    </div>
+
+    <div class="errorMessage">
+        @if (@DisplayErrorMessage)
+        {
+            <label>@ErrorMessage</label>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string LabelValue { get; set; }
+
+    [Parameter]
+    public string InputTextValue { get; set; }
+
+    [Parameter]
+    public EventCallback<string> InputTextChanged { get; set; }
+
+    [Parameter]
+    public string InputTextPlaceholder { get; set; }
+
+    [Parameter]
+    public string InputTextId { get; set; }
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    private async Task OnInputValueChanged(ChangeEventArgs args)
+    {
+        CurrentValue = args.Value.ToString();
+        await InputTextChanged.InvokeAsync(CurrentValue);
+    }
+
+
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        result = value;
+        validationErrorMessage = null;
+        return true;
+    }
+
+    [Parameter]
+    public bool DisplayErrorMessage { get; set; }
+
+    [Parameter]
+    public string ErrorMessage { get; set; }
+}

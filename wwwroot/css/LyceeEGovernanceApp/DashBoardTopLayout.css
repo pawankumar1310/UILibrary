@@ -1,0 +1,131 @@
+.TopContent {
+    margin: 0.313rem 0.313rem 0.313rem 0.313rem;
+}
+
+.LogoLeft img {
+    height: 7rem;
+    width: 7rem;
+}
+
+.navbar {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Navigation links */
+.navbar label {
+    float: left;
+    display: block;
+    color: #b5b5b5;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    transition: width 0.3s ease;
+}
+
+.navbar label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #077abd;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar label:hover::after {
+    width: 0;
+}
+
+.navbar label.active {
+    border-top: 2px solid #077abd;
+    border-left: 2px solid #077abd;
+    border-right: 2px solid #077abd;
+    padding-bottom: 12px;
+    color: rgb(66, 50, 50);
+}
+
+#LogoRightInput,
+#DropDown {
+    width: 18.75rem;
+    height: 2.2rem;
+    margin-bottom: 0.313rem;
+    border-radius: 0.313rem;
+    background: #DDDDDD;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 3px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 15px;
+    padding: 0 0.313rem 0 0.313rem;
+    cursor: pointer;
+}
+
+#LogoRightInput:focus,
+#DropDown:focus,
+#LogoRightInput:hover,
+#DropDown:hover {
+    background: #f1e4e4;
+    border: 1px solid rgb(0, 0, 0);
+    outline: none;
+}
+
+#LogoRightBtn {
+    width: 18.75rem;
+    height: 2.2rem;
+    border-radius: 0.313rem;
+    background: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 3px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(17, 0, 253);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 0.313rem 0 0.313rem;
+    word-spacing: 0.125rem;
+}
+
+#LogoRightBtn:focus {
+    color: #ffffff;
+    outline: none;
+    border: 1px solid #030303;
+}
+
+@media (max-width: 767px) {
+    .TopContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LogoLeft img {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .BottomContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        float: none;
+        display: inline-block;
+    }
+}
+
+/* For screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+}

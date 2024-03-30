@@ -1,0 +1,108 @@
+@* @using Microsoft.AspNetCore.Components.Forms
+@using Model
+
+<div class="NameInputComp">
+    <div class="labelDiv">
+        <label>@LabelValue</label>
+    </div>
+    <div class="inputDiv">
+        <select id="@Id" @onchange="HandleChange" class="@CssClass" style="border: 2px solid #3399ff; margin-bottom: 1rem;">
+            <option value="" disabled selected>@PlaceholderText</option>
+            @foreach (var option in Options)
+            {
+                <option value="@option.GenericModelId">@option.GenericModelName</option>
+            }
+        </select>
+    </div>
+</div>
+
+@code {
+    public List<GenericModel> Options { get; set; } = new List<GenericModel>();
+    [Parameter]
+    public Func<Task<List<GenericModel>>> LoadOptions { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadOptions != null)
+        {
+            Options = await LoadOptions.Invoke();
+        }
+    }
+
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public string LabelValue { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+    [Parameter]
+    public EventCallback<ChangeEventArgs> OnChange { get; set; }
+    private async Task HandleChange(ChangeEventArgs args)
+    {
+        await OnChange.InvokeAsync(args);
+    }
+    [Parameter]
+    public string PlaceholderText { get; set; }
+} *@
+
+
+<!-- NameInputComp.razor -->
+@typeparam TModel
+
+<div class="NameInputComp">
+    <div class="labelDiv">
+        <label>@LabelValue</label>
+    </div>
+    <div class="inputDiv2">
+        <select id="@Id" @onchange="HandleChange" class="@CssClass">
+            <option value="" disabled selected>@PlaceholderText</option>
+            @foreach (var option in Options)
+            {
+                <option value="@GetOptionValue(option)">@GetOptionText(option)</option>
+            }
+        </select>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<TModel> Options { get; set; } = new List<TModel>();
+
+    [Parameter]
+    public Func<Task<List<TModel>>> LoadOptions { get; set; }
+
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public string LabelValue { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public EventCallback<ChangeEventArgs> OnChange { get; set; }
+
+    [Parameter]
+    public string PlaceholderText { get; set; }
+
+    [Parameter]
+    public Func<TModel, string> GetOptionValue { get; set; }
+
+    [Parameter]
+    public Func<TModel, string> GetOptionText { get; set; }
+
+    private async Task HandleChange(ChangeEventArgs args)
+    {
+        await OnChange.InvokeAsync(args);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadOptions != null)
+        {
+            Options = await LoadOptions.Invoke();
+        }
+    }
+}

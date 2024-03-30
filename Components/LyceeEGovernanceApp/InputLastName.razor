@@ -1,0 +1,89 @@
+@using Microsoft.AspNetCore.Components.Forms
+@inherits InputBase<string>
+@using Services
+
+<div class="NameInputComp">
+    <div class="labelDiv">
+        <label>@LabelValue</label>
+    </div>
+
+    <div class="inputDiv">
+        <input type="text" class="form-input" value="@CurrentValue" @oninput="OnInputValueChanged"
+            placeholder="@InputTextPlaceholder" id="inputTextId" disabled="@IsDisabled"  readonly="@Isreadonly" />
+    </div>
+
+    <div class="errorMessage">
+        @if (@DisplayErrorMessage)
+        {
+            <label>@ErrorMessage</label>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string LabelValue { get; set; }
+
+    [Parameter]
+    public string InputTextValue { get; set; }
+
+    [Parameter]
+    public EventCallback<string> InputTextChanged { get; set; }
+
+    [Parameter]
+    public string InputTextPlaceholder { get; set; }
+
+    [Parameter]
+    public string InputTextId { get; set; }
+
+     [Parameter]
+    public bool Isreadonly { get; set; } 
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    private async Task OnInputValueChanged(ChangeEventArgs args)
+{
+
+    string newValue = args.Value.ToString().Trim(); // Trim any leading or trailing spaces
+
+    if (string.IsNullOrEmpty(newValue))
+    {
+        // Display error message for empty input
+        ErrorMessage = "Name cannot be empty.";
+        DisplayErrorMessage = true;
+    }
+    else if (!newValue.StartsWith(" ") && newValue.Count(char.IsWhiteSpace) <= 1 && Validation.IsValidName(newValue.Replace(" ", "")))
+    {
+        // Accept the input
+        CurrentValue = newValue;
+        DisplayErrorMessage = false;
+        await InputTextChanged.InvokeAsync(CurrentValue);
+    }
+    else
+    {
+        ErrorMessage = "Invalid input format.Accepts atmost one space";
+        DisplayErrorMessage = true;
+    }
+
+    StateHasChanged();
+}
+
+
+
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+         result = value;
+        validationErrorMessage = null;
+        return true; 
+
+        
+    }
+
+    [Parameter]
+    public bool DisplayErrorMessage { get; set; }
+
+    [Parameter]
+    public string ErrorMessage { get; set; }
+}

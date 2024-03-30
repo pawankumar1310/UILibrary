@@ -1,0 +1,200 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Forms
+
+
+<head>
+    <script type="text/javascript" src="Scripts/slicebox/jquery.slicebox.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var Page = (function () {
+                var $navArrows = $('#nav-arrows').hide(),
+                    $shadow = $('#shadow').hide(),
+                    slicebox = $('#sb-slider').slicebox({
+                        onReady: function () {
+                            $navArrows.show();
+                            $shadow.show();
+                        },
+                        orientation: 'r',
+                        cuboidsRandom: true,
+                        disperseFactor: 30
+                    }),
+                    init = function () {
+                        initEvents();
+                    },
+                    initEvents = function () {
+                        // add navigation events
+                        $navArrows.children(':first').on('click', function () {
+                            slicebox.next();
+                            return false;
+                        });
+                        $navArrows.children(':last').on('click', function () {
+                            slicebox.previous();
+                            return false;
+                        });
+                    };
+                return { init: init };
+            })();
+            Page.init();
+        });
+    </script>
+</head>
+
+<div class="row">
+    <div class="navbar-column" id="FirstNavBar">
+        <img src="Images/logo_Lycee_white.png" alt="Lavenir" />
+    </div>
+
+    <div class="navbar-column" id="SecondNavBar">
+        <section class="section" id="ceres">
+            <nav class="menu-ceres menu--ceres">
+                <ul class="menu__list">
+                    <li class="menu__item menu__item--current" id="listUserProfile">
+                        <a href="#" class="menu__link" id="menuLnkUserProfile" @onclick="ButtonOnClick">User Profile</a>
+
+                        <button ID="lnkUserProfile" @onclick="UserProfileClick">Link
+                            Button</button>
+                    </li>
+                    <li class="menu__item" id="listCurrentEvent">
+                        <a href="#" class="menu__link" id="menuLnkCurrentEvents">Current
+                            Events</a>
+
+                        <button OnClick="lnkCurrentEvents_Click" ID="lnkCurrentEvents">Link
+                            Button</button>
+                    </li>
+                    <li class="menu__item" id="listUpcomingEvent">
+                        <a href="#" class="menu__link" id="menuLnkUpcomingEvents">Upcoming
+                            Events</a>
+                        <button ID="lnkUpcomingEvents" OnClick="lnkUpcomingEvents_Click">Link
+                            Button</button>
+                    </li>
+                    <li class="menu__item" id="listPreviousEvent">
+                        <a href="#" class="menu__link" id="menuLnkPreviousEvents">Previous
+                            Events</a>
+                        <button ID="lnkPreviousEvents" OnClick="lnkPreviousEvents_Click">Link
+                            Button</button>
+                    </li>
+
+                </ul>
+                <script src="Scripts/menu/classie.js"></script>
+                <script src="Scripts/menu/clipboard.min.js"></script>
+                <script>
+                    (function () {
+                        [].slice.call(document.querySelectorAll('.menu-ceres')).forEach(function (menu) {
+                            var menuItems = menu.querySelectorAll('.menu__link'),
+                                setCurrent = function (ev) {
+                                    ev.preventDefault();
+
+                                    if (this.id == "menuLnkUserProfile") {
+                                        document.getElementById('lnkUserProfile').click();
+                                    }
+                                    else if (this.id == "menuLnkCurrentEvents") {
+                                        document.getElementById('lnkCurrentEvents').click();
+                                    }
+                                    else if (this.id == "menuLnkUpcomingEvents") {
+                                        document.getElementById('lnkUpcomingEvents').click();
+                                    }
+                                    else if (this.id == "menuLnkPreviousEvents") {
+                                        document.getElementById('lnkPreviousEvents').click();
+                                    }
+                                    else if (this.id == "menuLnkKnowledgeWorker") {
+                                        document.getElementById('LinkButton2').click();
+                                    }
+                                    var item = ev.target.parentNode;
+                                    if (classie.has(item, 'menu__item--current')) {
+                                        return false;
+                                    }
+                                    classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+                                    classie.add(item, 'menu__item--current');
+                                };
+
+                            [].slice.call(menuItems).forEach(function (el) {
+                                el.addEventListener('click', setCurrent);
+                            });
+                        });
+
+                        [].slice.call(document.querySelectorAll('.link-copy')).forEach(function (link) {
+                            link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+                            new Clipboard(link);
+                            link.addEventListener('click', function () {
+                                classie.add(link, 'link-copy--animate');
+                                setTimeout(function () {
+                                    classie.remove(link, 'link-copy--animate');
+                                }, 300);
+                            });
+                        });
+                    })(window);
+                </script>
+            </nav>
+        </section>
+        <br />
+        <section class="section" id="juliet">
+            <nav class="menu menu--juliet">
+                <ul class="menu__list">
+                    <li class="menu__item__name" id="listUserProfileImage">
+                        <img src="@UserProfileImage" ID="userProfileImage" />
+                    </li>
+                    <li class="menu__item__name" id="listUserProfileName">
+                        <label ID="lblUsername" class="menu__link__name">@Username</label>
+                    </li>
+
+                    <li class="menu__item" id="listEditProfile">
+                        <p class="menu__link" @onclick="EditUserProfileClick" id="EditProfile" style=" @TextColor">
+                            Edit Profile</p>
+                    </li>
+
+                   <li class="menu__item" id="listEditProfile">
+                        <p class="menu__link" @onclick="ShowSchoolInformationClick"
+                            style="border:none !important; margin-right:-20px;font-size: 23px;  padding-left:50px; padding-right:20px;margin-left:30px; padding-top:20px;padding-bottom:20px; @SchoolTextColor">
+                            School Information</p>
+                    </li>
+
+                    <li class="menu__item" id="listAchievements">
+                        <a href="#" class="menu__link" id="listAchievements">Achievements</a>
+                        <button ID="lnkAchievements" OnClick="lnkAchievements_Click">Link
+                            Button</button>
+                    </li>
+
+                   
+
+                    @* <li class="menu__item" id="listRecognitions">
+                        <a href="#" class="menu__link" id="listRecognitions">Recognitions</a>
+                        <button ID="lnkRecognitions" OnClick="lnkAchievements_Click">Link
+                            Button</button>
+                    </li> *@
+
+                </ul>
+            </nav>
+        </section>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string? CurrentPage { get; set; }
+    [Parameter]
+    public string UserProfileImage { get; set; }
+    [Parameter]
+    public string? Username { get; set; }
+    [Parameter]
+    public EventCallback ButtonOnClick { get; set; }
+    [Parameter]
+    public EventCallback UserProfileClick { get; set; }
+    [Parameter]
+
+    public EventCallback EditUserProfileClick { get; set; }
+
+    [Parameter]
+    public EventCallback ShowSchoolInformationClick { get; set; }
+    [Parameter]
+    public string SchoolTextColor { get; set; }
+    [Parameter]
+    public string TextColor { get; set; }
+
+     string selectedGroupId;
+     private void HandleGroupChange(ChangeEventArgs args)
+    {
+        selectedGroupId = args.Value?.ToString();
+        //userGroupService.UserGroupID = selectedGroupId;
+
+    }
+}

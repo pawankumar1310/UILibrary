@@ -1,0 +1,151 @@
+
+.form-input{
+    border: 2px solid #3399ff; 
+    margin-bottom: 1rem; 
+    width: 600px;
+    height: 100px;
+}
+
+.board{
+    margin-bottom: 1rem; 
+    width: 600px;
+    border-radius: 0.313rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    border: 2px solid #3399ff
+}
+/* .combostyle{
+    border: 2px solid #3399ff; 
+    margin-bottom: 1rem; 
+    width: 600px;
+    height: 100px;
+} */
+
+.inputDiv1 .combostyle {
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+.inputDiv1 .levelstyle {
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+
+.inputDiv1 .coursestyle {
+    /* outline: none; */
+    border: 2px solid #3399ff;
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff
+}
+
+.inputDiv1 .facilitystyle{
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+.inputDiv1 .mgtstyle{
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+.inputDiv1 .associationstyle{
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border: 2px solid #3399ff;
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+}
+
+.inputDiv1 .ownershipstyle{
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+
+.inputDiv2.boardstyle{
+    /* outline: none; */
+    border-color: 2px solid var(--blue-color);
+    border-radius: 0.313rem;
+    height: 2.2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: autoradiographic;
+    padding: 0 0.5rem 0 0.5rem;
+    background: var(--primaryBlack-color);
+    color: var(--white-color);
+    line-height: 1.5;
+    border: 2px solid #3399ff;
+}
+
+
+
+
+
+

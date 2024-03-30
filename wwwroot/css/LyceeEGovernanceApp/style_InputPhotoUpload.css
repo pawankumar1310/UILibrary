@@ -1,0 +1,165 @@
+@import url('root/style_CommonStyle.css');
+
+.image_input_div {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--blue-color);
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem; 
+    align-items: center;
+    border-radius: 5px;
+    height: 10rem;
+    width: 100%;
+}
+
+.image_label label {
+    display: block;
+    font-family: autoradiographic;
+    font-size: 1.1em;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+.image_input {
+    margin: 1rem 0 1rem 0;
+    border: 2px solid var(--blue-color);
+    border-radius: 5px;
+    height: 2rem;
+    padding: 0.313rem 0.313rem 0.5rem 0.313rem;
+    width: 100%;
+}
+
+.image_input .uploadImage {
+    border-radius: 5px;
+    color: var(--white-color);
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: autoradiographic;
+}
+
+.image_content {
+    border: 2px solid var(--blue-color);
+    display: flex;
+    border-radius: 5px;
+    width: 10rem;
+    height: 9.9rem;
+    align-items: center;
+}
+
+.image_content img {
+    width: 9.9rem;
+    height: 9.8rem;
+}
+
+/*----------------------------------------------------*/
+/* Extra Small Devices (xs) */
+@media (max-width: 767px) {
+    .image_input_div {
+        height: 8rem;
+        width: 99%;
+    }
+
+    .image_label label {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
+    .image_input {
+        height: 2rem;
+        width: 98%;
+    }
+
+    .image_input .uploadImage {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .image_content {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .image_content img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+}
+
+/* Medium Devices (md) */
+@media (min-width: 768px) and (max-width: 991) {
+    .image_input_div {
+        height: 9rem;
+        width: 99%;
+    }
+
+    .image_label label {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
+    .image_input {
+        height: 2rem;
+        width: 99%;
+    }
+
+    .image_input .uploadImage {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .image_content {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .image_content img {
+        width: 9rem;
+        height: 9rem;
+    }
+}
+
+/* Large Devices (lg) */
+@media (min-width: 992px) {
+    .image_input_div {
+        height: 9rem;
+        width: 99%;
+    }
+
+    .image_label label {
+        font-size: 1.1rem;
+        font-weight: 200;
+    }
+
+    .image_input {
+        height: 2rem;
+        width: 99%;
+    }
+
+    .image_input .form-input {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 0.867;
+        height: 2.5rem;
+        width: 99%;
+    }
+
+    .image_content {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .image_content img {
+        width: 9rem;
+        height: 9rem;
+    }
+}

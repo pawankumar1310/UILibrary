@@ -1,0 +1,16 @@
+<img src="@ImageSrc" alt="@ImageAlternateName" id="@ImageId" @onclick="@ImageOnClick">
+
+@code
+{
+    [Parameter]
+    public string ImageSrc{get; set;}
+
+    [Parameter]
+    public string ImageAlternateName{get; set;}
+
+    [Parameter]
+    public string ImageId{get; set;}
+
+    [Parameter]
+    public EventCallback ImageOnClick { get; set; }
+}

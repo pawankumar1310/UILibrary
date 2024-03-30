@@ -1,0 +1,64 @@
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="NameInputComp">
+    <div class="labelDiv">
+        <label>@LabelValue</label>
+    </div>
+
+    <div class="inputDiv">
+        <InputDate TValue="DateTime" class=@CssClass @bind-Value="selectedDate" @onchange="OnInputValueChanged"/>
+    </div>
+
+    <div class="errorMessage">
+        @if (DisplayErrorMessage)
+        {
+            <label>@ErrorMessage</label>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string CssClass { get; set; }
+
+    private DateTime selectedDate { get; set; }
+
+    [Parameter]
+    public string LabelValue { get; set; }
+
+    [Parameter]
+    public string InputTextValue { get; set; }
+
+    [Parameter]
+    public EventCallback<string> InputTextChanged { get; set; }
+
+    [Parameter]
+    public string InputTextPlaceholder { get; set; }
+
+    [Parameter]
+    public string InputTextId { get; set; }
+
+    [Parameter]
+    public bool Isreadonly { get; set; }
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    [Parameter]
+    public Action<DateTime> SelectedDateChanged { get; set; }
+
+    private async Task OnInputValueChanged(ChangeEventArgs args)
+    {
+        if (DateTime.TryParse(args.Value?.ToString(), out DateTime result))
+        {
+            selectedDate = result;
+            SelectedDateChanged?.Invoke(selectedDate); // Invoke the event to notify parent component
+        }
+    }
+
+    [Parameter]
+    public bool DisplayErrorMessage { get; set; }
+
+    [Parameter]
+    public string ErrorMessage { get; set; }
+}

@@ -1,0 +1,78 @@
+.cbp-MODEL .Headinglabel {
+    display: block;
+    font-family: autoradiographic;
+    padding: 18px 5px 5px 2px;
+    font-size: 1.1em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    }
+    .cbp-mc-form .Headinglabel {
+    display: block;
+    font-family: autoradiographic;
+    padding: 18px 5px 5px 2px;
+    font-size: 1.1em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    }
+    .cbp-mc-form .Headinglabel1 {
+    display: block;
+    font-family: autoradiographic;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.1em;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    }
+    .cbp-mc-form .Headinglabel {
+    padding: 15px 5px 5px 2px;
+    }
+    .social-input-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    }
+    
+    .social-input-container img {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        width: 30px;
+        height: 31px;
+    }  
+    .fields input[type='checkbox'] {
+    height: 18px;
+    width: 20px;
+    padding-left: 40px;
+    }
+    
+    .cbp-mc-form .fields {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1em;
+    padding: 5px 10px;
+    font-style: italic;
+    margin:8px;
+    color: white;
+    display: block;
+    width: 100%;
+    background: #000;
+    border: 2px solid #3399ff;
+    padding-left: 40px;
+    }
+    
+    .cbp-mc-form .fields:focus {
+        border: 2px solid white;
+        padding-left: 40px;
+    }
+    .social-media-icon {
+    background: #46619C;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    }
+    p{
+    color: red;
+    }

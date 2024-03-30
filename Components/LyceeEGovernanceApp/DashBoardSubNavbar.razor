@@ -1,0 +1,73 @@
+@using Model;
+
+<div class="d-flex justify-content-center BottomContent">
+    <img src="@ImageSrc" alt="@AlternateName" @onclick="@ImageOnClick">
+    <div id="UserName">
+        <label @onclick="@LabelOnClick">@UserName</label>
+    </div>
+    <label @onclick="@Navbar1stLabelOnClick"
+        class="@((@IsShowNavbar1stLabelContent) ? "active" : "")">@Navbar1stLabelValue</label>
+    <label @onclick="@Navbar2ndLabelOnClick"
+        class="@((@IsShowNavbar2ndLabelContent) ? "active" : "")">@Navbar2ndLabelValue</label>
+    <label @onclick="@Navbar3rdLabelOnClick"
+        class="@((@IsShowNavbar3rdLabelContent) ? "active" : "")">@Navbar3rdLabelValue</label>
+    <label @onclick="@Navbar4thLabelOnClick"
+        class="@((@IsShowNavbar4thLabelContent) ? "active" : "")">@Navbar4thLabelValue</label>
+</div>
+
+@code
+{
+    //Fields For Image Tag
+    [Parameter]
+    public required string ImageSrc { get; set; }
+
+    [Parameter]
+    public required string AlternateName { get; set; }
+
+    [Parameter]
+    public required string UserName { get; set; }
+
+
+    //Fields For Navbar Tag
+    //{Onclick fields}
+    [Parameter]
+    public EventCallback ImageOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback LabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar1stLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar2ndLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar3rdLabelOnClick { get; set; }
+
+    [Parameter]
+    public EventCallback Navbar4thLabelOnClick { get; set; }
+
+    //{Show Content Fields}
+    [Parameter]
+    public bool IsShowNavbar1stLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar2ndLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar3rdLabelContent { get; set; }
+    [Parameter]
+    public bool IsShowNavbar4thLabelContent { get; set; }
+
+    //{Label Value Fields}
+    [Parameter]
+    public required string Navbar1stLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar2ndLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar3rdLabelValue { get; set; }
+
+    [Parameter]
+    public required string Navbar4thLabelValue { get; set; }
+}
